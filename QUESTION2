@@ -1,1 +1,14 @@
 
+def firstUniqChar(s):
+    count = {}
+    n = len(s)
+    # build hash map: character and how often it appears
+    for i in range(n):
+        c = s[i]
+        count[c] = count.get(c, 0) + 1
+
+    # find the index
+    for i in range(n):
+        if count[s[i]] == 1:
+            return i
+    return -1
